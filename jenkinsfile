@@ -2,14 +2,8 @@ pipeline {
     agent any
     tools { 
         maven 'maven' 
-
-    }
-         stages {
-         stage ('git clone') {
-            steps {
-                git  'https://github.com/Nikita130520/maven-project.git' 
-            }
-         }
+   }
+    stages {
           stage ('compile') {
             steps {
                 sh "mvn compile" 
@@ -30,6 +24,5 @@ pipeline {
                 sh "mvn install" 
             }
          }
-    
     }
 }
